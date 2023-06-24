@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Ticket Booking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url(https://c4.wallpaperflare.com/wallpaper/606/80/969/light-background-color-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 70px;
+    padding-left: 230px;
+}
+
+.booking-form {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 5px;
+    width: 800px;
+}
+
+.booking-form h3 {
+    margin: 15px 0px;
+    text-align: center;
+}
+
+.booking-form .input-group2 {
+    margin: 15px;
+    width: 342px;
+    display: inline-block;
+}
+.booking-form .input-group1 {
+    margin: 15px;
+    width: 450px;
+    padding-left: 220px;
+}
+.booking-form .input-group {
+    margin: 15px;
+    padding-left: 185px;
+}
+.f-class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inp-width {
+    min-width: 300px;
+}
+
+.plus-minus-btn {
+    color: black;
+    background: transparent;
+    font-size: 25px;
+    padding-left: 20px;
+    margin-top: 1px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.booking-form .calculations {
+    margin: 10px 0;
+}
+
+.booking-form .calculations p {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.booking-form input {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    border: none;
+    background: rgb(227, 214, 214);
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.booking-form .inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.booking-content {
+    color: white;
+    width: 80%;
+}
+
+.booking-content h1 {
+    font-size: 70px;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.btn-style {
+    width: 47%;
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    background-color: black;
+}
+
+.btn-style a {
+    color: white;
+}
+.btn {
+    padding-left: 250px;
+}
+.amount {
+    display: flex;
+    justify-content:space-between;
+
+}
+button {
+    width: 300px;
+}
+.calculations {
+    width: 550px;
+    padding-left: 200px;
+}
+.fare {
+    padding-bottom: 20px;
+}
+</style>
+<!-- <script>
+    function handleClick(inputId, isIncrease, fareId, unit) {
+    const ticketInput = document.getElementById(inputId);
+    ticketInputInt = parseInt(ticketInput.value);
+    if (isIncrease == true) {
+        ticketInput.value = ticketInputInt + 1;
+    }
+    if (isIncrease == false && ticketInput.value > 0) {
+        ticketInput.value = ticketInputInt - 1;
+    }
+    const newTicketInput = ticketInput.value;
+
+    const ticketFare = document.getElementById(fareId);
+    const ticketFareInt = parseInt(ticketFare.innerText);
+    ticketFare.innerText = unit * newTicketInput;
+    const ticketFareAmount = ticketFare.innerText;
+
+    totalCalculator();
+}
+
+function totalCalculator() {
+    const subtotal = document.getElementById("subtotal");
+    const subtotalInt = parseInt(subtotal.innerText);
+
+    const firstClassInputInt = getInputValue("first-class-input");
+    const economyClassInputInt = getInputValue("economy-class-input");
+
+    subtotal.innerText = (firstClassInputInt * 15000) + (economyClassInputInt * 10000);
+    const subTotalFare = subtotal.innerText;
+    const subTotalFareInt = parseInt(subTotalFare);
+
+    const tax = document.getElementById("tax");
+    tax.innerText = subTotalFareInt * 0.1;
+    const totalTax = parseInt(tax.innerText);
+
+    const grandTotal = document.getElementById("grand-total");
+    grandTotal.innerText = subTotalFareInt + totalTax;
+}
+
+function getInputValue(inputId) {
+    const economyClassInput = document.getElementById(inputId);
+    const economyClassInputInt = parseInt(economyClassInput.value);
+    return economyClassInputInt;
+} -->
+</script>
+<body>
+    
+    <main class="main-content container">
+        <div class="booking-form">
+            <h3>Booking Flights</h3>
+
+            <div class="input-group2">
+                <label for="">Flying From</label>
+                <input class="inp-style" type="text" name="" placeholder="Hyderabad">
+            </div>
+
+            <div class="input-group2">
+                <label for="">Flying To</label>
+                <input class="inp-style" type="text" name="" placeholder="Delhi">
+            </div>
+
+            <div class="inputs">
+                <div class="input-group1">
+                    <label" for="">Departure</label>
+                        <input class="inp-style" type="date" name="">
+                </div>
+            </div>
+
+            <div class="input-group f-class">
+                <div>
+                    <label for="">First Class ₹15000</label>
+                    <input id="first-class-input" class="inp-style inp-width" type="number" value="1">
+                </div>
+
+                <div>
+                    <button onclick="handleClick('first-class-input', true, 'first-class-fare', 15000)"
+                        id="first-class-plus" class="plus-minus-btn">+</button>
+                    <button onclick="handleClick('first-class-input', false, 'first-class-fare', 15000)"
+                        id="first-class-minus" class="plus-minus-btn">-</button>
+                </div>
+            </div>
+
+            <div class="input-group f-class">
+                <div>
+                    <label for="">Economy ₹10000</label>
+                    <input id="economy-class-input" class="inp-style inp-width" type="number" value="1">
+                </div>
+
+                <div>
+                    <button onclick="handleClick('economy-class-input', true, 'economy-class-fare', 10000)"
+                        id="economy-class-plus" class="plus-minus-btn">+</button>
+                    <button onclick="handleClick('economy-class-input', false, 'economy-class-fare', 10000)"
+                        id="economy-class-minus" class="plus-minus-btn">-</button>
+                </div>
+            </div>
+
+            <div class="calculations">
+                <div class="fare">
+                    <div class="amount">
+                        <div class="left">
+                            <p>First Class</p>
+                        </div>
+
+                        <div class="right">
+                            <p>₹<span id="first-class-fare">15000</span></p>
+                        </div>
+                    </div>
+
+                    <div class="amount">
+                        <div class="left">
+                            <p>Economy Class</p>
+                        </div>
+
+                        <div class="right">
+                            <p>₹<span id="economy-class-fare">10000</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+
+                    <div class="right">
+                        <p>₹<span id="subtotal">25000</span></p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Tax 10% GST</p>
+                    </div>
+                    <div class="right">
+                        <p>₹<span id="tax">2500</span></p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p>₹<span id="grand-total">27500</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn">
+            <button class="btn-style"><a href="thanx.html">Book Now</a></button></div>
+        </div>
+        </div> 
+        </section>
+
+        <script>function handleClick(inputId, isIncrease, fareId, unit) {
+            const ticketInput = document.getElementById(inputId);
+            ticketInputInt = parseInt(ticketInput.value);
+            if (isIncrease == true) {
+                ticketInput.value = ticketInputInt + 1;
+            }
+            if (isIncrease == false && ticketInput.value > 0) {
+                ticketInput.value = ticketInputInt - 1;
+            }
+            const newTicketInput = ticketInput.value;
+        
+            const ticketFare = document.getElementById(fareId);
+            const ticketFareInt = parseInt(ticketFare.innerText);
+            ticketFare.innerText = unit * newTicketInput;
+            const ticketFareAmount = ticketFare.innerText;
+        
+            totalCalculator();
+        }
+        
+        function totalCalculator() {
+            const subtotal = document.getElementById("subtotal");
+            const subtotalInt = parseInt(subtotal.innerText);
+        
+            const firstClassInputInt = getInputValue("first-class-input");
+            const economyClassInputInt = getInputValue("economy-class-input");
+        
+            subtotal.innerText = (firstClassInputInt * 15000) + (economyClassInputInt * 10000);
+            const subTotalFare = subtotal.innerText;
+            const subTotalFareInt = parseInt(subTotalFare);
+        
+            const tax = document.getElementById("tax");
+            tax.innerText = subTotalFareInt * 0.1;
+            const totalTax = parseInt(tax.innerText);
+        
+            const grandTotal = document.getElementById("grand-total");
+            grandTotal.innerText = subTotalFareInt + totalTax;
+        }
+        
+        function getInputValue(inputId) {
+            const economyClassInput = document.getElementById(inputId);
+            const economyClassInputInt = parseInt(economyClassInput.value);
+            return economyClassInputInt;
+        }</script>
+</body>
+
+</html>
